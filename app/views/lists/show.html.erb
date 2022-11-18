@@ -5,8 +5,9 @@
 <%= b.comment %>
 <% end %>
 
+<% if @list.photo.attached? %>
 <%= cl_image_tag @list.photo.key, width: 400, height: 300, crop: :fill %>
-
+<% end %>
 <%= link_to "back to list", lists_path, class: "btn btn-light" %>
 
 <%= simple_form_for [@list, @bookmark] do |f| %>
